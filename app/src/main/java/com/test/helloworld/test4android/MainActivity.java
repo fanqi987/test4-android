@@ -27,6 +27,26 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, BaiduMapTestActivity.class));
             }
         });
+
+        findViewById(R.id.light_sensor_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LightSensorActivity.class));
+            }
+        });
+        findViewById(R.id.accelerometer_sensor_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AccelerometerSensorActivity.class));
+            }
+        });
+
+        findViewById(R.id.orientation_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, OrientationActivity.class));
+            }
+        });
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED
                 && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)

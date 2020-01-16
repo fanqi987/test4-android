@@ -18,4 +18,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试百度地图" />
+
+    <Button
+        android:id="@+id/light_sensor_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="光照传感器测试" />
+
+    <Button
+        android:id="@+id/accelerometer_sensor_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="加速度传感器测试" />
+
+    <Button
+        android:id="@+id/orientation_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="方向测试" />
 </LinearLayout>
