@@ -67,6 +67,7 @@ public class BaiduMapTestActivity extends Activity implements LocationListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
         if (baiduMap != null) {
             baiduMap.setMyLocationEnabled(false);
         }

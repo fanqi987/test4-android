@@ -1,39 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/map_btn"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试地图" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/baidu_map_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="测试百度地图" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/light_sensor_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="光照传感器测试" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <Button
-        android:id="@+id/accelerometer_sensor_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="加速度传感器测试" />
+            <Button
+                android:id="@+id/map_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试地图" />
 
-    <Button
-        android:id="@+id/orientation_btn"
+            <Button
+                android:id="@+id/baidu_map_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="测试百度地图" />
+
+            <Button
+                android:id="@+id/light_sensor_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="光照传感器测试" />
+
+            <Button
+                android:id="@+id/accelerometer_sensor_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加速度传感器测试" />
+
+            <Button
+                android:id="@+id/orientation_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="方向测试" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="方向测试" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_drawer_header"
+        app:menu="@menu/nav_drawer" />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
