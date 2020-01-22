@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,7 +22,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
+
+
+    @BindView(R.id.network_frame_btn)
+    Button mNetworkFrameBtn;
 
     DrawerLayout drawerLayout;
 
@@ -29,10 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton floatingActionButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         setSupportActionBar(toolbar);
@@ -115,6 +125,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mNetworkFrameBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, NetworkFrameActivity.class));
+            }
+        });
 
     }
 

@@ -11,16 +11,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-public class Test2Fragment extends Fragment {
+public class Test3Fragment extends Fragment {
     Button button;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment2, container, false);
-        button = v.findViewById(R.id.fragment2_btn);
-        return v; }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment3, container, false);
+        button = v.findViewById(R.id.fragment3_btn);
+        return v;
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class Test2Fragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.action_fragment3);
+                Navigation.findNavController(v).navigateUp();
             }
         });
     }

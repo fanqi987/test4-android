@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_fragment1"
+    app:startDestination="@id/test1Fragment">
+
+
+    <fragment
+        android:id="@+id/test1Fragment"
+        android:name="com.test.helloworld.test4android.Test1Fragment"
+        android:label="Test1Fragment"
+        tools:layout="@layout/fragment1">
+        <action
+            android:id="@+id/action_fragment2"
+            app:destination="@+id/test2Fragment"
+            app:enterAnim="@anim/right_in"
+            app:exitAnim="@anim/left_out"
+            app:popEnterAnim="@anim/left_in"
+            app:popExitAnim="@anim/right_out"
+
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/test2Fragment"
+        android:name="com.test.helloworld.test4android.Test2Fragment"
+        android:label="Test2Fragment"
+        tools:layout="@layout/fragment2">
+        <action
+            android:id="@+id/action_fragment1"
+            app:enterAnim="@anim/right_in"
+            app:exitAnim="@anim/left_out"
+            app:popEnterAnim="@anim/left_in"
+            app:popExitAnim="@anim/right_out"
+            app:popUpTo="@id/test1Fragment"></action>
+        <action
+            android:id="@+id/action_fragment3"
+            app:destination="@id/nav_graph_page3"
+            app:enterAnim="@anim/right_in"
+            app:exitAnim="@anim/left_out"
+            app:popEnterAnim="@anim/left_in"
+            app:popExitAnim="@anim/right_out"></action>
+    </fragment>
+
+
+    <navigation
+        android:id="@+id/nav_graph_page3"
+        app:startDestination="@id/test3Fragment">
+        <fragment
+            android:id="@+id/test3Fragment"
+            android:name="com.test.helloworld.test4android.Test3Fragment"
+            android:label="Test3Fragment"
+            tools:layout="@layout/fragment3"></fragment>
+    </navigation>
+</navigation>

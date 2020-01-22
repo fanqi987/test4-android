@@ -14,7 +14,6 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:fitsSystemWindows="true">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -22,7 +21,6 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:contentScrim="@color/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
@@ -41,6 +39,7 @@
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
+        <!--        nested这里放置滚动行为字符串-->
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -93,6 +92,12 @@
                     android:padding="10dp"
                     android:text="btn"
                     android:textAppearance="?android:attr/textAppearance" />
+
+                <Button
+                    android:id="@+id/network_frame_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="测试网络框架工具" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
